@@ -1,0 +1,92 @@
+* {
+    color: #e34c26;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+    user-select: none;
+}
+span {
+    display: block;
+    margin-top: 30px;
+    display: inline-block;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background: #141116;
+}
+/* Navbar */
+nav{
+    line-height: 1.5rem;
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav_l{
+    align-items: center;
+    padding: 10px;
+    justify-self: flex-start;
+
+}
+.nav_c{
+    align-items: center;
+    gap: 30px;
+    padding: 10px;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+}
+.nav_r{
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+    justify-items   : space-between;
+}
+/* taille des pays */
+a.dd-selected{
+    background:#141116;
+}
+.dd-selected-image {
+    /* Image de la langue selectionné */
+    margin-right: 15px;
+    height: 40px; 
+    width: 40px;
+    margin-bottom: 2px;
+}
+div.dd-select{
+    border: 0;
+}
+img.dd-option-image{
+    /* Images dans le burger */
+    height: 40px; 
+    width: 40px;
+}
+.dd-pointer-up{
+    border-bottom: solid 5px #e34c26 !important;
+}
+.dd-pointer-down{
+    border-top: solid 5px #e34c26 ;
+}
+ul.dd-options.dd-click-off-close li:hover{
+background-color: #e34c26;
+transition: 0.2s;
+}
+ul.dd-options.dd-click-off-close li:not(:hover){
+    background-color: #fcfcfc;
+    transition: 0.2s;
+}
