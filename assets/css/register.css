@@ -5,7 +5,9 @@
     box-sizing: border-box;
     font-family: "Nunito", sans-serif;
     user-select: none;
+    font-weight: 600;
 }
+
 span {
     display: block;
     margin-top: 30px;
@@ -14,13 +16,19 @@ span {
     letter-spacing: 2px;
 }
 
-ul{
+ul {
     list-style: none;
 }
-a{
+
+nav a {
     text-decoration: none;
 }
-body{
-    background: #141116;
-}
 
+body {
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    height: 100vh;
+    background: #141116;
+    margin: 0;
+}

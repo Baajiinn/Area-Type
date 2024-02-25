@@ -1,0 +1,69 @@
+/* Navbar */
+nav{
+    position: fixed;
+    line-height: 1.5rem;
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 20px;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.nav_l{
+    float: left;
+    align-self: center;
+    padding: 10px;
+    justify-self: flex-start;
+
+}
+.nav_c{
+    align-items: middle;
+    gap: 90px;
+    margin-left: 160px;
+    display: flex;
+    
+}
+.nav_r{
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    justify-self: flex-end;
+    display: flex;
+    margin-right: 10px;
+    justify-items   : space-between;
+}
+/* taille des pays */
+a.dd-selected{
+    background:#141116;
+}
+.dd-selected-image {
+    /* Image de la langue selectionné */
+    margin-right: 15px;
+    height: 40px; 
+    width: 40px;
+    margin-bottom: 2px;
+}
+div.dd-select{
+    border: 0;
+}
+img.dd-option-image{
+    /* Images dans le burger */
+    height: 40px; 
+    width: 40px;
+}
+.dd-pointer-up{
+    border-bottom: solid 5px #e34c26 !important;
+}
+.dd-pointer-down{
+    border-top: solid 5px #e34c26 ;
+}
+ul.dd-options.dd-click-off-close li:hover{
+background-color: #e34c26;
+transition: 0.2s;
+}
+ul.dd-options.dd-click-off-close li:not(:hover){
+    background-color: #fcfcfc;
+    transition: 0.2s;
+}
