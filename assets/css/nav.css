@@ -1,5 +1,5 @@
 /* Navbar */
-nav{
+nav {
     background-color: #141116;
     z-index: 5;
     position: fixed;
@@ -9,8 +9,8 @@ nav{
     padding: 20px;
     top: 0;
     display: flex;
-    justify-content: space-around;
-    align-items: baseline;
+    justify-content: space-evenly;
+    align-items: center;
     width: 100%;
 }
 .nav_l{
@@ -22,8 +22,7 @@ nav{
 }
 .nav_c{
     align-items: middle;
-    gap: 90px;
-    margin-left: 160px;
+    gap: 60px;
     display: flex;
     
 }

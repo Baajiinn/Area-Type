@@ -9,8 +9,8 @@
 <nav>
     <p class="nav_l">Area Type</p>
     <ul class="nav_c">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Exercice</a></li>
+        <li><a href="#">Solo</a></li>
+        <li><a href="#">Multiplayer</a></li>
         <li><a href="#">Loadboard</a></li>
     </ul>
     <ul class="nav_r">
@@ -27,7 +27,7 @@
                 <option class="country-items" value="It" data-imagesrc="assets/svg/It.png"></option>
             </select>
         </li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="register.php">Login</a></li>
     </ul>
 </nav>
 
@@ -38,10 +38,6 @@
 <script>
 $("#slick").ddslick({
     width: "100%",
-
     imagePosition: "left",
-    selectText: "Select your language",
-
-
 });
 </script>

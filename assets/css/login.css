@@ -57,10 +57,11 @@ input{
     border-radius: 5px;
     font-size: 25px;
     width: 100%;
+    color: #e34c26;
 }
 .submit:hover{
     background-color: #1e1d20;
-    color: #e34c26;
+    color: #fcfcfc;
     transition: 0.3s;
 }
 .lost{
