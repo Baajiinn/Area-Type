@@ -1,18 +1,18 @@
 # Area-Type
 Day 1 developpement:
 
-    - Navbar
+    - Navbar ✅
 
-    - Home page (void, main color, etc.)
+    - Home page (void, main color, etc.) ✅
 
-    - Register page
+    - Register page ✅
 
-    - Login page
+    - Login page ✅
 
 
 
 Day 2 Incomming:
 
-    - Exercice page prototype
+    - Exercice page prototype ❌
 
-    - Register & login system (PHP)
+    - Register & login system (PHP) ❌
