@@ -1,5 +1,7 @@
 /* Navbar */
 nav{
+    background-color: #141116;
+    z-index: 5;
     position: fixed;
     line-height: 1.5rem;
     font-weight: 600;
@@ -8,7 +10,7 @@ nav{
     top: 0;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: baseline;
     width: 100%;
 }
 .nav_l{
