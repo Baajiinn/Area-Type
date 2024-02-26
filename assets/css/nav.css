@@ -1,4 +1,12 @@
 /* Navbar */
+a:hover{
+    color: #e26a4c;
+    transition: 0.3s;
+}
+a:not(:hover){
+    color: #e34c26;
+    transition: 0.3s;
+}
 nav {
     background-color: #141116;
     z-index: 5;
