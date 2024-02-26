@@ -7,6 +7,22 @@ a:not(:hover){
     color: #e34c26;
     transition: 0.3s;
 }
+.shop{
+    border: 0;
+    background-color: #e34c26;
+    background-position:center;
+    height: 35px;
+    border-radius:5px; 
+    padding:5px;
+}
+.shop:hover{
+    background-color: #e26a4c;
+    transition: 0.3s;
+}
+.shop:not(:hover){
+    background-color: #e34c26;
+    transition: 0.3s;
+}
 nav {
     background-color: #141116;
     z-index: 5;

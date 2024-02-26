@@ -7,11 +7,12 @@
 </head>
 <nav>
     <a href="index.php" class="nav_l">Area Type</a>
+
     <ul class="nav_c">
         <li><a href="#">Solo</a></li>
         <li><a href="#">Multiplayer</a></li>
         <li><a href="#">Loadboard</a></li>
-        <li><img src="assets/svg/shop.png" style="background-position:center; height: 35px; background-color:#e34c26; border-radius:5px; padding:5px;" alt=""></li>
+        <li><img class="shop" src="assets/svg/shop.png" alt=""></li>
     </ul>
     <ul class="nav_r">
 
