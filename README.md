@@ -12,16 +12,19 @@ Day 2 Done:
 
 Day 3 Incomming:
 
+
     - Shop page 💭
 
     - Loadboard page 💭
 
-    - Exercice page prototype 💭
+    - Gamemods page 💭
 
     - Responsive pages  💭
 
 
 Day 4 Incomming:
+
+    - Exercice page prototype 💭
 
     - Solo exercice system (Python, JS, etc.) 💭
         * Easy Mode
