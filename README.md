@@ -1,18 +1,29 @@
 # Area-Type
-Day 1 developpement:
-
-    - Navbar ✅
-
-    - Home page (void, main color, etc.) ✅
-
-    - Register page ✅
-
-    - Login page ✅
-
-
-
-Day 2 Incomming:
+Day 2 Done:
 
     - Exercice page prototype ❌
 
-    - Register & login system (PHP) ❌
+    - Solo and Multiplayer page (cards + animation) ✅
+
+    - Responsive pages  ❌
+
+    - CSS path fixed ✅
+
+
+Day 3 Incomming:
+
+    - Shop page 💭
+
+    - Loadboard page 💭
+
+    - Exercice page prototype 💭
+
+    - Responsive pages  💭
+
+
+Day 4 Incomming:
+
+    - Solo exercice system (Python, JS, etc.) 💭
+        * Easy Mode
+        * Normal Mode
+        * Difficult Mode

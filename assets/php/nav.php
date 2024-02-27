@@ -9,8 +9,8 @@
     <a href="index.php" class="nav_l">Area Type</a>
 
     <ul class="nav_c">
-        <li><a href="#">Solo</a></li>
-        <li><a href="#">Multiplayer</a></li>
+        <li><a href="../../select_solo.php">Solo</a></li>
+        <li><a href="../../select_multi.php">Multiplayer</a></li>
         <li><a href="#">Loadboard</a></li>
         <li><img class="shop" src="assets/svg/shop.png" alt=""></li>
     </ul>

@@ -10,7 +10,7 @@
 
 <body>
     <?php
-    include './assets/php/nav.php';
+    include 'assets/php/nav.php';
     ?>
     <form action="index.php" method="get">
         <h1>Login</h1>
