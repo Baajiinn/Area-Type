@@ -15,24 +15,28 @@
 
 <body>
     <?php include 'assets/php/nav.php' ?>
-    <div>
-        <a class="container" href="solo/ur_solo.php">
-            <div class="title-unrated">Unrated</div>
-            <br>
-            <div class="descirption">Jouer seul et librement sans compététivité</div>
-        </a>
+    <section class="flex-container">
 
-    </div>
-    <div>
-        <a class="container" href="solo/rk_solo.php">
-            <div class="title-ranked">Ranked</div>
-            <br>
-            <div class="descirption">Jouer seul dans des parties classées</div>
-            <div class="rank">Votr rang : <img src="assets/img/rank_8.webp" alt=""></div>
-        </a>
+        <div>
+            <a class="container" href="solo/ur_solo.php">
+                <div class="title-unrated">Unrated</div>
+                <br>
+                <div class="descirption">Jouer seul et librement sans compététivité</div>
+            </a>
+
+        </div>
+        <div>
+            <a class="container" href="solo/rk_solo.php">
+                <div class="title-ranked">Ranked</div>
+                <br>
+                <div class="descirption">Jouer seul dans des parties classées</div>
+                <div class="rank">Votr rang : <img src="assets/img/rank_8.webp" alt=""></div>
+            </a>
 
 
-    </div>
+        </div>
+    </section>
+
 
 </body>
 

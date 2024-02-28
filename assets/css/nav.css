@@ -114,3 +114,16 @@ ul.dd-options.dd-click-off-close li:not(:hover){
     background-color: #fcfcfc;
     transition: 0.2s;
 }
+/* RESPONSIVE */
+@media only screen and (max-width: 901px){
+    nav{
+        font-size: 1.1rem;
+    }
+    
+}
+@media only screen and (max-width: 839px){
+    nav{
+        font-size: 1rem;
+    }
+    
+}

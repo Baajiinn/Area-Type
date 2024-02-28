@@ -1,28 +1,21 @@
 # Area-Type
-Day 2 Done:
 
-    - Exercice page prototype ❌
+Day 3 Done:
 
-    - Solo and Multiplayer page (cards + animation) ✅
+    - Shop page ❌
 
-    - Responsive pages  ❌
+    - Loadboard page ✅
 
-    - CSS path fixed ✅
+    - Rank added ✅
 
+    - Gamemods page ❌
 
-Day 3 Incomming:
-
-
-    - Shop page 💭
-
-    - Loadboard page 💭
-
-    - Gamemods page 💭
-
-    - Responsive pages  💭
+    - Responsive pages (Select_playermode, Small Part Navbar) ✅
 
 
 Day 4 Incomming:
+
+    - Responsive (Mobile, Pad) -> Navbar, Loadboard 💭
 
     - Exercice page prototype 💭
 
