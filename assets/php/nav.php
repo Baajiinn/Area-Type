@@ -13,7 +13,7 @@
         <li><a href="../../select_solo.php">Solo</a></li>
         <li><a href="../../select_multi.php">Multiplayer</a></li>
         <li><a href="../../loadboard.php">Loadboard</a></li>
-        <li><img class="shop" src="assets/svg/shop.png" alt=""></li>
+        <li><a href="../../shop.php"><img class="shop" src="assets/svg/shop.png" alt=""></a></li>
     </ul>
     <ul class="nav_r">
 
