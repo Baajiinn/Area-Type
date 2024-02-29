@@ -35,9 +35,9 @@ a:not(:hover){
     transition: 0.3s;
 }
 nav{
+    z-index: 3;
     list-style: none;
     background-color: #141116;
-    z-index: 5;
     position: fixed;
     line-height: 1.5rem;
     font-weight: 600;
@@ -58,18 +58,19 @@ nav a{
     text-decoration: none;
 }
 .nav_l{
-    float: left;
+    display: flex;
+    width: 167.53px;
     align-self: center;
     padding: 10px;
-    justify-self: flex-start;
+    justify-content: center;
 
 }
 .nav_c{
-    margin-left: 100px;
     justify-items: center;
     align-items: center;
     gap: 60px;
     display: flex;
+    
     
 }
 .nav_r{
@@ -78,8 +79,7 @@ nav a{
     padding: 10px;
     justify-self: flex-end;
     display: flex;
-    margin-right: 10px;
-    justify-items   : space-between;
+    justify-items: space-between;
 }
 /* taille des pays */
 a.dd-selected{
@@ -114,16 +114,156 @@ ul.dd-options.dd-click-off-close li:not(:hover){
     background-color: #fcfcfc;
     transition: 0.2s;
 }
+/* Hamburger menu */
+.menu-hamburger{
+    width: 35px;
+   display: none;
+   
+}
+.menu-hamburger-cross{
+    width: 35px;
+   display: none;
+}
+.burger{
+    visibility: hidden;
+    display: none;
+}
+
+.burger button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+}
+.cross{
+    margin-left: 7px;
+}
 /* RESPONSIVE */
 @media only screen and (max-width: 901px){
     nav{
         font-size: 1.1rem;
+        padding: 15px;
+        justify-content: space-between;
     }
-    
+    .nav_c{
+        gap: 40px;
+    }
+    .shop{
+        height: 30px;
+    }
+    .dd-selected-image{
+        height: 35px;
+    }
+    img.dd-option-image{
+        height: 35px;
+    }
+    .nav_l{
+        width: 159.45px;
+    }
 }
 @media only screen and (max-width: 839px){
     nav{
         font-size: 1rem;
+        line-height: 1;
+    }
+    .shop{
+        height: 25px;
+    }
+    .dd-selected-image{
+        height: 30px;
+        width: 30px;
+    }
+    img.dd-option-image{
+        height: 30px;
+        width: 30px;
     }
     
+    
+}
+@media only screen and (max-width:808px){
+    nav{
+        line-height: 1;
+        justify-content: space-between;
+    }
+    .nav_c {
+        margin-left: 0;
+        align-items: center;
+        gap: 40px;
+        display: flex;
+    }
+}
+@media only screen and (max-width:912px){
+    .nav_c{
+        margin-left: 0;
+    }
+    
+}
+@media only screen and (max-width:730px){
+    nav{
+        font-size: 1.2rem;
+        padding: 0;
+    }
+    nav :nth-child(1) { order: 3; }
+    nav :nth-child(2) { order: 2; }
+    nav :nth-child(3) { order: 1; }
+    nav :nth-child(4) { order: 4; }
+    .nav_l{
+        width: 145px;
+    }
+    .burger{
+        width: 145px;
+        visibility:visible;
+        display: block;
+        
+    }
+
+    .hidden{
+        transform: translateX(-100vw);
+        transition: all .5s ease;
+    }
+
+    .show{
+        transform: translateX(0);
+        transition: all .5s ease;
+    }
+
+    .nav_c{
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(5px);
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #9e949057;
+        position: absolute;
+        flex-direction: column;
+        justify-content: center;
+        border: 0;
+        gap: 80px;
+        font-size: 1.3rem;
+
+    }
+
+
+    .nav-links{
+        display: flex;
+        transition: all .5s ease-in-out;
+    }
+    .shop{
+        height: 35px;
+    }
+    .nav_c :nth-child(1) { order: 1; }
+    .nav_c :nth-child(2) { order: 2; }
+    .nav_c :nth-child(3) { order: 3; }
+    .nav_c :nth-child(4) { order: 4; }
+
+    .menu-hamburger{
+        margin-left: 15px;
+        display: block;
+    }
+    .menu-hamburger-{
+        margin-left: 15px;
+        display: block;
+    }
 }
