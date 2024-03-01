@@ -87,24 +87,10 @@
         justify-content: center;
     }
 }
-/* NOT ANIMATION  TO FIX */
-@media only screen and (min-width:657px) and (max-width:787px){
-    .container{
-        width: 607.59px;
-    }
-    .container:hover{
-        transform: translateY(-20px);
-        transition: all 0.5s ease;
-    }
-    .container:not(:hover){
-        transform: translateY(0px);
-        transition: 0.5s;
-    }
-}
 @media only screen and (max-width:730px){
     .flex-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-content: center;
         align-items: center;
         justify-content: center;
@@ -112,7 +98,6 @@
         align-self: center;
         justify-self: center;
         position: relative;
-        z-index: -1;
     }
 }
 @media only screen and (max-width:529px){
