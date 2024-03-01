@@ -37,7 +37,7 @@ body {
 form {
     display: flex;
     background-color: #1a171d;
-    padding: 50px;
+    padding: 50px 200px;
     border-radius: 10px;
     box-shadow: 0px 0px 1px 7px #1e1d20;
     justify-content: center;
