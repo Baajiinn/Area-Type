@@ -41,7 +41,7 @@
 }
 .container:hover{
     transform: translateY(-20px);
-    transition: 0.5s;
+    transition: all 0.5s ease;
 }
 .container:not(:hover){
     transform: translateY(0px);
@@ -87,9 +87,18 @@
         justify-content: center;
     }
 }
+/* NOT ANIMATION  TO FIX */
 @media only screen and (min-width:657px) and (max-width:787px){
     .container{
         width: 607.59px;
+    }
+    .container:hover{
+        transform: translateY(-20px);
+        transition: all 0.5s ease;
+    }
+    .container:not(:hover){
+        transform: translateY(0px);
+        transition: 0.5s;
     }
 }
 @media only screen and (max-width:730px){

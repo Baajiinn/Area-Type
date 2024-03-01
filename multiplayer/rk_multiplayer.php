@@ -17,7 +17,7 @@
     <?php include "../assets/php/nav2.php" ?>
     <section class="section-container">
         <div class="container">
-            <div class="box-list">
+            <div class="box-list plus">
                 <a class="box" href="#">
                     <div class="title-unrated">Vies</div>
                     <br>
