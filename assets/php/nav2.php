@@ -10,7 +10,7 @@
     <a href="../../index.php" class="nav_l">Area Type</a>
 
     <ul class="nav_c hidden" id="navlinks">
-        <li><a href="../../select_solo.php">Solo</a></li>
+        <li><a href="../../solo/ur_solo.php">Solo</a></li>
         <li><a href="../../select_multi.php">Multiplayer</a></li>
         <li><a href="../../loadboard.php">Loadboard</a></li>
         <li><a href="../../shop.php"><img class="shop" src="../assets/svg/shop.png" alt=""></a></li>

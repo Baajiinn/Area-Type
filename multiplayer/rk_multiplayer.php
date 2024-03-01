@@ -15,6 +15,47 @@
 
 <body>
     <?php include "../assets/php/nav2.php" ?>
+    <section class="section-container">
+        <div class="container">
+            <div class="box-list">
+                <a class="box" href="#">
+                    <div class="title-unrated">Vies</div>
+                    <br>
+                    <div class="description"><img src="../assets/img/heart.png" alt=""></div>
+                    <br>
+                    <div class="descirption">Taper jusqu'à ne plus avoir de vies restantes</div>
+                </a>
+                <a class="box" href="#">
+                    <div class="title-unrated">Temps</div>
+                    <br>
+                    <div class="description"><img src="../assets/img/sand.png" alt=""></div>
+                    <br>
+                    <div class="descirption">Taper le plus de texte avant la fin du temps fixé</div>
+                </a>
+                <a class="box" href="#">
+                    <div class="title-unrated">Course contre la montre</div>
+                    <br>
+                    <div class="description"><img src="../assets/img/chronometer.png" alt=""></div>
+                    <br>
+                    <div class="descirption">Jouer contre vous même à travers une course</div>
+                </a>
+                <a class="box" href="#">
+                    <div class="title-unrated">1 contre 1</div>
+                    <br>
+                    <div class="description"><img src="../assets/img/1p.png" alt=""></div>
+                    <br>
+                    <div class="descirption">Jouer en 1 contre 1 avec un ami ou un autre adversaire</div>
+                </a>
+                <a class="box" href="#">
+                    <div class="title-unrated">2 contre 2</div>
+                    <br>
+                    <div class="description"><img src="../assets/img/2p.png" alt=""></div>
+                    <br>
+                    <div class="descirption">Jouer en 2 contre 2 avec des ami ou 2 autres adversaires</div>
+                </a>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
