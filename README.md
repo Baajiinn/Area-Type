@@ -1,26 +1,12 @@
 # Area-Type
 
-Day 4 Done:
-
-    - Responsive (Mobile, Pad) -> Navbar, Loadboard ✅
-
-    - Shop page ✅
-
-    - Gamemods page ✅
-
-    - Exercice page prototype ❌
-
-    
-    
-    
-Day 5 Incomming:
+Day 5 Working:
 
     - Exercice page prototype 💭
 
-    - Solo exercice system (Python, JS, etc.) 💭
+    - Account system 💭
     
 
 Day 6 Incomming:
 
-    - Back-end system
-        1.  
+    - Solo exercice system (Python, JS, etc.) 💭
