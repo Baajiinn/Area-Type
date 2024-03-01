@@ -1,12 +1,12 @@
 # Area-Type
 
-Day 5 Working:
+Day 6 Working:
 
     - Exercice page prototype 💭
 
     - Account system 💭
     
 
-Day 6 Incomming:
+Day 7 Incomming:
 
     - Solo exercice system (Python, JS, etc.) 💭
