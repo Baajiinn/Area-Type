@@ -1,0 +1,29 @@
+.exercice{
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    padding: 30px 100px;
+}
+.container{
+    font-size: 1.7rem;
+    justify-content: center;
+    padding: 30px 100px;
+}
+.container p{
+    max-height: 2.8em; /* ajustez la hauteur en fonction de votre taille de police */
+    overflow: hidden;
+    text-align: center;
+    text-wrap: wrap;
+    word-spacing: 0.6rem;
+}
+.untyped{
+  color: #797D7F  ;
+}
+.typed{
+    color:#ECF0F1 ;
+}
+.fault{
+color: #EC7063;
+}
