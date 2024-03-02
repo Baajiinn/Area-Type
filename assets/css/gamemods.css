@@ -59,6 +59,7 @@
     
 }
 .box:hover{
+    color: #e34c26;
     transform: translateY(-20px);
     transition: 0.5s;
     cursor: pointer;

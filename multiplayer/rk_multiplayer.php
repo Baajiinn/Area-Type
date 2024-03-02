@@ -18,7 +18,7 @@
     <section class="section-container">
         <div class="container">
             <div class="box-list plus">
-                <a class="box" href="#">
+                <a class="box" href="../loading.php">
                     <div class="title-unrated">Vies</div>
                     <br>
                     <div class="description"><img src="../assets/img/heart.png" alt=""></div>
