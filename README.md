@@ -1,12 +1,16 @@
 # Area-Type
 
-Day 6 Working:
+Day 6 Done:
 
-    - Exercice page prototype 💭
+    - Exercice page prototype ⚠
 
-    - Account system 💭
+    - Solo exercice system (Python, JS, etc.) ⚠
     
 
 Day 7 Incomming:
 
-    - Solo exercice system (Python, JS, etc.) 💭
+    - Shop 💭
+
+Day 8 Incomming:
+
+    - Account system 💭

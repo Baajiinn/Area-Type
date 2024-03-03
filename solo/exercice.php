@@ -22,12 +22,11 @@
             <p class="typed">Prout</p>
             <br>
             <p class="fault">Prout</p>
-            <textarea id="zoneDeTexte"></textarea>
+
         </div>
     </section>
 
-    <!-- Lien vers le fichier JavaScript externe -->
-    <script src="../assets/js/exercice.js" defer></script>
+
 </body>
 
 </html>

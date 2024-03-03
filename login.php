@@ -12,19 +12,35 @@
     <?php
     include 'assets/php/nav.php';
     ?>
-    <form action="index.php" method="get">
-        <h1>Login</h1>
-        <br>
-        <input type="email" id="email" placeholder="Email">
-        <br>
-        <br>
-        <input type="password" name="" id="password" placeholder="Password">
-        <a class="lost" href="#">Password lost</a>
-        <br>
-        <br>
-        <input class="submit" type="submit" value="Connect">
-        
-    </form>
+    <div class="container">
+        <form action="index.php" method="get">
+            <h1>Login</h1>
+
+            <div class="input-box">
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-box">
+                <input type="password" name="" id="password" placeholder="Password" required>
+            </div>
+
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox" name="" id="" /> Remember me
+                </label>
+                <a class="lost" href="#">Forgot password ?</a>
+
+            </div>
+
+            <input class="submit" type="submit" value="Log in">
+
+            <div class="register-link">
+                <p>Don't have an account?</p><a href="register.php">Register Here !</a>
+            </div>
+
+        </form>
+    </div>
+
 </body>
 
 </html>
