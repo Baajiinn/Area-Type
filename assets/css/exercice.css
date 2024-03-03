@@ -1,22 +1,83 @@
-.exercice{
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Inter:wght@300&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+:root{
+    --textPrimary: #fff;
+    --textSecondary: #666;
+    --textFault: #EC7063;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    user-select: none;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background: #141116;
+}
+span{
+    text-decoration: none;
+    border: none;
+}
+.exercice {
     height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     width: 100%;
-    padding: 30px 100px;
-}
-.container{
-    font-size: 1.7rem;
+    display: flex;
+    padding: 100px;
+    align-items: center;
     justify-content: center;
-    padding: 30px 100px;
+    align-content: center;
+    flex-wrap: wrap;
 }
-.container p{
-    max-height: 2.8em; /* ajustez la hauteur en fonction de votre taille de police */
-    overflow: hidden;
+#header{
+    width: 100%;
+}
+#footer{
+    margin-top: 40px;
+}
+#buttons{
     text-align: center;
-    text-wrap: wrap;
-    word-spacing: 0.6rem;
+}
+#info{
+    font-size: 1.7rem;
+}
+#game{
+    font-size: 1.6rem;
+}
+button{
+    border: 0;
+}
+div#game{
+    line-height: 35px;
+    height: 105px;
+    overflow: hidden;
+    position: relative;
+}
+#words{
+    filter: blur(5px);
+    color: var(--textSecondary);
+}
+#game:focus #words{
+filter: blur(0);
+}
+
+#focus-error{
+position: absolute;
+inset: 0;
+text-align: center;
+padding-top: 35px; ;
+}
+#game:focus #focus-error{
+    display: none;
+}
+div.words{
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0 5px;
 }
 .untyped{
   color: #797D7F  ;
