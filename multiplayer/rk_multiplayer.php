@@ -18,26 +18,19 @@
     <section class="section-container">
         <div class="container">
             <div class="box-list plus">
-                <a class="box" href="../loading.php">
+                <a class="box" href="exerciceMulti_life.php">
                     <div class="title-unrated">Vies</div>
                     <br>
                     <div class="description"><img src="../assets/img/heart.png" alt=""></div>
                     <br>
                     <div class="descirption">Taper jusqu'à ne plus avoir de vies restantes</div>
                 </a>
-                <a class="box" href="#">
+                <a class="box" href="exerciceMulti_cooldown.php">
                     <div class="title-unrated">Temps</div>
                     <br>
                     <div class="description"><img src="../assets/img/sand.png" alt=""></div>
                     <br>
                     <div class="descirption">Taper le plus de texte avant la fin du temps fixé</div>
-                </a>
-                <a class="box" href="#">
-                    <div class="title-unrated">Course contre la montre</div>
-                    <br>
-                    <div class="description"><img src="../assets/img/chronometer.png" alt=""></div>
-                    <br>
-                    <div class="descirption">Jouer contre vous même à travers une course</div>
                 </a>
                 <a class="box" href="#">
                     <div class="title-unrated">1 contre 1</div>

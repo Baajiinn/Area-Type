@@ -29,7 +29,7 @@
         </div>
     </section>
 
-    <script src="../assets/js/exercice.js"></script>
+    <script src="../assets/js/exercice2v2.js"></script>
 </body>
 
 </html>
