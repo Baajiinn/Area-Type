@@ -43,6 +43,10 @@ body {
     height: 50px;
     margin: 30px 0px;
 }
+.remember-forgot label input{
+    border: 0;
+    outline: none;
+}
 .input-box input{
     border: none;
     width: 100%;

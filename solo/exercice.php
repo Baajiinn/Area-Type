@@ -17,15 +17,14 @@
 
         <div class="container" id="game" tabindex="0">
             <div id="words"></div>
-            <div id="cursor"></div>
+            <div id="cursor" style="transition: 0.2s ease;"></div>
             <div id="focus-error">Click here to focus</div>
         </div>
 
         <div id="footer">
             <div id="buttons">
-                <button>restart</button>
-                <button>play-pause</button>
-                <button>next</button>
+                <button><img src="../assets/svg/restart.png" alt=""></button>
+                <button><img src="../assets/svg/next.png" alt=""></button>
             </div>
         </div>
     </section>

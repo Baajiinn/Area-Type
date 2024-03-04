@@ -26,7 +26,7 @@
 
             <div class="remember-forgot">
                 <label>
-                    <input type="checkbox" name="" id="" /> Remember me
+                    <input type="checkbox" name="" id=""> Remember me
                 </label>
                 <a class="lost" href="#">Forgot password ?</a>
 
@@ -37,7 +37,6 @@
             <div class="register-link">
                 <p>Don't have an account?</p><a href="register.php">Register Here !</a>
             </div>
-
         </form>
     </div>
 

@@ -2,9 +2,9 @@
 
 Day 6 Done:
 
-    - Exercice page prototype ⚠
+    - Exercice page prototype ✅
 
-    - Solo exercice system (Python, JS, etc.) ⚠
+    - Solo exercice system (Python, JS, etc.) ✅
     
 
 Day 7 Incomming:

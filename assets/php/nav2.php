@@ -34,7 +34,7 @@
                 <option class="country-items" value="It" data-imagesrc="../assets/svg/It.png"></option>
             </select>
         </li>
-        <li><a href="../../register.php">Login</a></li>
+        <li><a href="../../login.php">Login</a></li>
     </ul>
 </nav>
 

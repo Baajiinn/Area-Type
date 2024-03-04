@@ -21,7 +21,7 @@ function randomWord() {
 }
 
 function formatWord(word) {
-  return `<div class="word"><span class="letter">${word
+  return `<div class="word"><span class='letter'>${word
     .split("")
     .join("</span><span class='letter'>")}</span></div>`;
 }
@@ -33,52 +33,7 @@ function newGame() {
   }
   addClass(document.querySelector(".word"), "current");
   addClass(document.querySelector(".letter"), "current");
-  document.getElementById("info").innerHTML = gameTime / 1000 + "";
   window.timer = null;
-  document.getElementById("cursor").style.display = "none";
-}
-
-function updateTimer() {
-  const currentTime = new Date().getTime();
-  const msPassed = currentTime - window.gameStart;
-  const sPassed = Math.round(msPassed / 1000);
-  const sLeft = gameTime / 1000 - sPassed;
-
-  if (sLeft <= 0) {
-    gameOver();
-    return;
-  }
-
-  document.getElementById("info").innerHTML = sLeft + "";
-  requestAnimationFrame(updateTimer);
-}
-
-function gameOver() {
-  clearInterval(window.timer);
-  addClass(document.getElementById("game"), "over");
-  const result = getWpm();
-  document.getElementById("info").innerHTML = `WPM : ${getWpm()}`;
-  document.getElementById("cursor").style.display = "none";
-}
-
-function getWpm() {
-  const words = [...document.querySelectorAll(".word")];
-  const lastTypedWord = document.querySelector(".word.current");
-  const lastTypedWordIndex = words.indexOf(lastTypedWord);
-  const typedWords = words.slice(0, lastTypedWordIndex);
-  const correctWords = typedWords.filter((word) => {
-    const letter = [...word.children];
-    const incorrectLetters = letter.filter((letter) =>
-      letter.className.includes("incorrect")
-    );
-    const correctLetters = letter.filter((letter) =>
-      letter.className.includes("correct")
-    );
-    return (
-      incorrectLetters.length === 0 && correctLetters.length === letter.length
-    );
-  });
-  return (correctWords.length / gameTime) * 60000;
 }
 
 document.getElementById("game").addEventListener("keyup", (ev) => {
@@ -91,15 +46,18 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
   const isBackspace = key === "Backspace";
   const isFirstLetter = currentLetter === currentWord.firstChild;
 
-  if (document.querySelector("#game.over")) {
-    return;
-  }
+  console.log({ key, expected });
 
   if (!window.timer && isLetter) {
-    window.timer = true;
-    window.gameStart = new Date().getTime();
-    document.getElementById("cursor").style.display = "block";
-    updateTimer();
+    window.timer = setInterval(() => {
+      if (!window.gameStart) {
+        window.gameStart = new Date().getTime();
+      }
+      const currentTime = new Date().getTime();
+      const msPassed = currentTime - window.gameStart;
+      const sPassed = Math.round(msPassed / 1000);
+      document.getElementById("info").innerHTML = sPassed + "";
+    }, 1000);
   }
 
   if (isLetter) {
@@ -170,12 +128,9 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
   const nextWord = document.querySelector(".word.current");
   const cursor = document.getElementById("cursor");
   cursor.style.top =
-    (nextLetter || nextWord || isSpace || isBackspace).getBoundingClientRect()
-      .top +
-    4 +
-    "px";
+    (nextLetter || nextWord).getBoundingClientRect().top + 4 + "px";
   cursor.style.left =
-    (nextLetter || nextWord || isSpace || isBackspace).getBoundingClientRect()[
+    (nextLetter || nextWord).getBoundingClientRect()[
       nextLetter ? "left" : "right"
     ] + "px";
 });
