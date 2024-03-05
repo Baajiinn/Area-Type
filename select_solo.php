@@ -14,11 +14,11 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body class="solo-p">
     <?php include "assets/php/nav.php" ?>
     <section class="section-container">
         <div class="container">
-            <div class="box-list">
+            <div class="box-list solo">
                 <a class="box" href="solo/exercice_life.php">
                     <div class="title-unrated">Vies</div>
                     <br>
@@ -33,10 +33,10 @@
                     <br>
                     <div class="descirption">Taper le plus de texte avant la fin du temps fixé</div>
                 </a>
-                <a class="box" href="solo/exercice_timer.php">
-                    <div class="title-unrated">Course contre la montre</div>
+                <a class="box" href="solo/exercice_infinite.php">
+                    <div class="title-unrated">Infinie</div>
                     <br>
-                    <div class="description"><img src="assets/img/chronometer.png" alt=""></div>
+                    <div class="description"><img src="assets/img/infinie.png" alt=""></div>
                     <br>
                     <div class="descirption">Jouer contre vous même à travers une course</div>
                 </a>

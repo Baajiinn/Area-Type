@@ -18,7 +18,7 @@
     <?php include "../assets/php/nav2.php" ?>
     <section class="section-container">
         <div class="container">
-            <div class="box-list plus">
+            <div class="box-list plus multi">
                 <a class="box" href="exerciceMulti_life.php">
                     <div class="title-unrated">Vies</div>
                     <br>

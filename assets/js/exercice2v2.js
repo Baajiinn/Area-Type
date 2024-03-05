@@ -132,10 +132,21 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
       removeClass(currentLetter, "current");
     }
     addClass(currentWord.nextSibling.firstChild, "current");
+    const nextLetter = document.querySelector(".word.current .letter");
+    const nextWord = document.querySelector(".word.current");
+    const cursor = document.getElementById("cursor");
+    cursor.style.top =
+      (nextLetter || nextWord || isSpace || isBackspace).getBoundingClientRect()
+        .top +
+      4 +
+      "px";
+    cursor.style.left =
+      (nextLetter || nextWord || isSpace || isBackspace).getBoundingClientRect()
+        .left + "px";
   }
 
   if (isBackspace) {
-    if (currentLetter && isFirstLetter) {
+    if (currentLetter && isFirstLetter && currentWord.previousSibling) {
       // make previous word current, last letter current
       removeClass(currentWord, "current");
       addClass(currentWord.previousSibling, "current");

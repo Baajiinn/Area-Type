@@ -3,10 +3,45 @@ const words =
     " "
   );
 const wordsCount = words.length;
-const gameTime = 30 * 1000;
 window.timer = null;
 window.gameStart = null;
+let gameTime = 30 * 1000;
 
+let intervalId; // Declare a variable to store the interval ID
+
+async function updateGameTime(value) {
+  clearInterval(intervalId); // Clear the interval if it exists
+  gameTime = parseInt(value) * 1000;
+  newGame();
+  document.getElementById("info").innerHTML = gameTime / 1000 + ""; // Adjust the delay time if needed
+  // Start the timer and store the interval ID
+  intervalId = setInterval(function () {
+    // Update the game time here
+  }, gameTime);
+}
+
+document.getElementById("timeFixed30").addEventListener("click", () => {
+  clearInterval(intervalId); // Clear the interval when the button is clicked
+  updateGameTime(30);
+});
+
+document.getElementById("timeFixed60").addEventListener("click", () => {
+  clearInterval(intervalId); // Clear the interval when the button is clicked
+  updateGameTime(60);
+});
+
+document.getElementById("timeFixed120").addEventListener("click", () => {
+  clearInterval(intervalId); // Clear the interval when the button is clicked
+  updateGameTime(120);
+});
+
+document.getElementById("timeFixed").addEventListener("click", () => {
+  clearInterval(intervalId); // Clear the interval when the button is clicked
+  const customTime = document.getElementById("timeChoice").value;
+  if (customTime !== "") {
+    updateGameTime(customTime);
+  }
+});
 function addClass(el, name) {
   el.className += " " + name;
 }
@@ -25,8 +60,8 @@ function formatWord(word) {
     .split("")
     .join("</span><span class='letter'>")}</span></div>`;
 }
-
 function newGame() {
+  clearInterval(intervalId);
   document.getElementById("words").innerHTML = "";
   for (i = 0; i < 200; i++) {
     document.getElementById("words").innerHTML += formatWord(randomWord());
@@ -38,7 +73,7 @@ function newGame() {
   document.getElementById("cursor").style.display = "none";
 }
 
-function updateTimer() {
+async function updateTimer() {
   const currentTime = new Date().getTime();
   const msPassed = currentTime - window.gameStart;
   const sPassed = Math.round(msPassed / 1000);
@@ -80,6 +115,46 @@ function getWpm() {
   });
   return (correctWords.length / gameTime) * 60000;
 }
+
+// HIDING TIMER
+// Hide the timer when a button is clicked
+document.getElementById("timeFixed30").addEventListener("click", () => {
+  document.getElementById("info").style.display = "none";
+  updateGameTime(30);
+});
+
+document.getElementById("timeFixed60").addEventListener("click", () => {
+  document.getElementById("info").style.display = "none";
+  updateGameTime(60);
+});
+
+document.getElementById("timeFixed120").addEventListener("click", () => {
+  document.getElementById("info").style.display = "none";
+  updateGameTime(120);
+});
+
+document.getElementById("timeFixed").addEventListener("click", () => {
+  document.getElementById("info").style.display = "none";
+  const customTime = document.getElementById("timeChoice").value;
+  if (customTime !== "") {
+    updateGameTime(customTime);
+  }
+});
+
+// Show the timer when the user starts typing
+document.getElementById("game").addEventListener("keyup", (ev) => {
+  const tab_b = document.getElementById("time-b");
+  document.getElementById("info").style.display = ""; // Reset the display property
+  tab_b.style.position = "relative";
+  tab_b.style.transition = "0.3s";
+  tab_b.style.transform = "translateY(1px)";
+  // Rest of your keyup event handler...
+});
+
+// Refresh button
+document.getElementById("refresh").addEventListener("click", () => {
+  window.location.reload(true);
+});
 
 document.getElementById("game").addEventListener("keyup", (ev) => {
   const key = ev.key;
@@ -132,10 +207,21 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
       removeClass(currentLetter, "current");
     }
     addClass(currentWord.nextSibling.firstChild, "current");
+    const nextLetter = document.querySelector(".word.current .letter");
+    const nextWord = document.querySelector(".word.current");
+    const cursor = document.getElementById("cursor");
+    cursor.style.top =
+      (nextLetter || nextWord || isSpace || isBackspace).getBoundingClientRect()
+        .top +
+      4 +
+      "px";
+    cursor.style.left =
+      (nextLetter || nextWord || isSpace || isBackspace).getBoundingClientRect()
+        .left + "px";
   }
 
   if (isBackspace) {
-    if (currentLetter && isFirstLetter) {
+    if (currentLetter && isFirstLetter && currentWord.previousSibling) {
       // make previous word current, last letter current
       removeClass(currentWord, "current");
       addClass(currentWord.previousSibling, "current");

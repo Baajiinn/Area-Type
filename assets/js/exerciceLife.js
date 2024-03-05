@@ -3,7 +3,8 @@ const words =
     " "
   );
 const wordsCount = words.length;
-const gameTime = 30 * 1000;
+const gameTime = 10000 * 1000;
+const wordLimit = 100;
 window.timer = null;
 window.gameStart = null;
 
@@ -21,7 +22,7 @@ function randomWord() {
 }
 
 function formatWord(word) {
-  return `<div class="word"><span class='letter'>${word
+  return `<div class="word"><span class="letter">${word
     .split("")
     .join("</span><span class='letter'>")}</span></div>`;
 }
@@ -33,8 +34,58 @@ function newGame() {
   }
   addClass(document.querySelector(".word"), "current");
   addClass(document.querySelector(".letter"), "current");
+  document.getElementById("info").innerHTML = gameTime / 1000 + "";
   window.timer = null;
+  document.getElementById("cursor").style.display = "none";
 }
+
+function updateTimer() {
+  const currentTime = new Date().getTime();
+  const msPassed = currentTime - window.gameStart;
+  const sPassed = Math.round(msPassed / 1000);
+  const sLeft = gameTime / 1000 - sPassed;
+
+  if (sLeft <= 0) {
+    gameOver();
+    return;
+  }
+
+  document.getElementById("info").innerHTML = sLeft + "";
+  requestAnimationFrame(updateTimer);
+}
+
+function gameOver() {
+  clearInterval(window.timer);
+  addClass(document.getElementById("game"), "over");
+  const result = getWpm();
+  document.getElementById("info").innerHTML = `WPM : ${getWpm()}`;
+  document.getElementById("cursor").style.display = "none";
+}
+
+function getWpm() {
+  const words = [...document.querySelectorAll(".word")];
+  const lastTypedWord = document.querySelector(".word.current");
+  const lastTypedWordIndex = words.indexOf(lastTypedWord);
+  const typedWords = words.slice(0, lastTypedWordIndex);
+  const correctWords = typedWords.filter((word) => {
+    const letter = [...word.children];
+    const incorrectLetters = letter.filter((letter) =>
+      letter.className.includes("incorrect")
+    );
+    const correctLetters = letter.filter((letter) =>
+      letter.className.includes("correct")
+    );
+    return (
+      incorrectLetters.length === 0 && correctLetters.length === letter.length
+    );
+  });
+  return (correctWords.length / gameTime) * 60000;
+}
+
+// Refresh button
+document.getElementById("refresh").addEventListener("click", () => {
+  window.location.reload(true);
+});
 
 document.getElementById("game").addEventListener("keyup", (ev) => {
   const key = ev.key;
@@ -46,18 +97,15 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
   const isBackspace = key === "Backspace";
   const isFirstLetter = currentLetter === currentWord.firstChild;
 
-  console.log({ key, expected });
+  if (document.querySelector("#game.over")) {
+    return;
+  }
 
   if (!window.timer && isLetter) {
-    window.timer = setInterval(() => {
-      if (!window.gameStart) {
-        window.gameStart = new Date().getTime();
-      }
-      const currentTime = new Date().getTime();
-      const msPassed = currentTime - window.gameStart;
-      const sPassed = Math.round(msPassed / 1000);
-      document.getElementById("info").innerHTML = sPassed + "";
-    }, 1000);
+    window.timer = true;
+    window.gameStart = new Date().getTime();
+    document.getElementById("cursor").style.display = "block";
+    updateTimer();
   }
 
   if (isLetter) {
@@ -90,10 +138,21 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
       removeClass(currentLetter, "current");
     }
     addClass(currentWord.nextSibling.firstChild, "current");
+    const nextLetter = document.querySelector(".word.current .letter");
+    const nextWord = document.querySelector(".word.current");
+    const cursor = document.getElementById("cursor");
+    cursor.style.top =
+      (nextLetter || nextWord || isSpace || isBackspace).getBoundingClientRect()
+        .top +
+      4 +
+      "px";
+    cursor.style.left =
+      (nextLetter || nextWord || isSpace || isBackspace).getBoundingClientRect()
+        .left + "px";
   }
 
   if (isBackspace) {
-    if (currentLetter && isFirstLetter) {
+    if (currentLetter && isFirstLetter && currentWord.previousSibling) {
       // make previous word current, last letter current
       removeClass(currentWord, "current");
       addClass(currentWord.previousSibling, "current");
@@ -122,15 +181,17 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
     const margin = parseInt(words.style.marginTop || "0px");
     words.style.marginTop = margin - 35 + "px";
   }
-
   // cursor movement
   const nextLetter = document.querySelector(".letter.current");
   const nextWord = document.querySelector(".word.current");
   const cursor = document.getElementById("cursor");
   cursor.style.top =
-    (nextLetter || nextWord).getBoundingClientRect().top + 4 + "px";
+    (nextLetter || nextWord || isSpace || isBackspace).getBoundingClientRect()
+      .top +
+    4 +
+    "px";
   cursor.style.left =
-    (nextLetter || nextWord).getBoundingClientRect()[
+    (nextLetter || nextWord || isSpace || isBackspace).getBoundingClientRect()[
       nextLetter ? "left" : "right"
     ] + "px";
 });

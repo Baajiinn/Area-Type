@@ -37,6 +37,7 @@ span{
     width: 100%;
 }
 #header{
+    gap: 20px;
     width: 100%;
 }
 #footer{
@@ -62,6 +63,8 @@ div#buttons{
     height: 40px;
 }
 #info{
+    margin-bottom: 40px;
+    text-align: center;
     font-size: 1.7rem;
     color: #E34C26;
 }
@@ -70,6 +73,9 @@ div#buttons{
 }
 button{
     border: 0;
+}
+#timeFixed{
+    cursor: pointer;
 }
 div#game{
     line-height: 35px;
@@ -122,6 +128,10 @@ div#game:focus{
 }
 #game:focus #cursor{
     display: block;
+    visibility: visible;
+}
+#game #cursor{
+    visibility: hidden;
 }
 #game.over #words{
 opacity: .5;
@@ -134,5 +144,39 @@ filter: blur(0px);
     display: none;
 }
 #game.over #cursor{
+    display: none;
+}
+.time-b{
+    padding: 10px 10px;
+    display: inline-block;
+    background-color: #1c181f ;
+    box-shadow: 0 0 1px 3px #1e1d20;
+    border-radius: 15px;
+}
+.time-b button{
+    background-color: transparent;
+    border: 2px solid #E34C26;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #E34C26;
+    font-size: 1.1rem;
+    padding: 5px;
+}
+.push{
+    margin-left: 15px;
+}
+.time-b button:hover{
+    background-color: #E34C26;
+    color: #ffffff;
+    transition: .3s ease;
+
+}
+.time-b button:not(:hover){
+    background-color: transparent;
+    color: #E34C26;
+    transition: .3s ease;
+
+}
+#timeFixed{
     display: none;
 }

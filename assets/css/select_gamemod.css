@@ -63,10 +63,11 @@
 }
 .descirption{
     text-align: center;
+    color: #e34c26;
 }
 .descirption p{
     
-    text-decoration: #a8a8a8;
+    text-decoration: #e34c26;
 }
 .rank{
     align-self: center;
