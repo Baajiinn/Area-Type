@@ -1,6 +1,6 @@
 # Area-Type
 
-Day 7 Working:
+Day 7 Done:
 
     - Linked pages ✅
     
@@ -8,7 +8,7 @@ Day 7 Working:
 
     - Exercice sysyem adapted ✅
 
-    - Shop ❌
+    - Shop Deleted ❗
 
 Day 8 Incomming:
 
