@@ -13,8 +13,8 @@
         <ul class="nav_c hidden" id="navlinks">
             <li><a href="../../select_solo.php">Solo</a></li>
             <li><a href="../../select_multi.php">Multiplayer</a></li>
-            <li><a href="../../loadboard.php">Ledearboard</a></li>
-            <li><a href="../../shop.php"><img class="shop" src="assets/svg/shop.png" alt=""></a></li>
+            <li><a href="../../loadboard.php">Leaderboard</a></li>
+
         </ul>
 
         <div class="burger">

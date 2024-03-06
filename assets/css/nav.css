@@ -69,10 +69,11 @@ nav a{
 .nav_c{
     justify-items: center;
     align-items: center;
-    gap: 60px;
+    gap: 80px;
     display: flex;
-    
-    
+}
+.nav_c{
+    text-align: center;
 }
 .nav_r{
     align-items: center;

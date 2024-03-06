@@ -4,12 +4,16 @@ Day 7 Working:
 
     - Linked pages ✅
     
-    - Exercice responsive 💭
+    - Exercice responsive ❌
 
     - Exercice sysyem adapted ✅
 
-    - Shop 💭
+    - Shop ❌
 
 Day 8 Incomming:
 
+    - Exercice responsive 💭
+
     - Account system 💭
+
+    
