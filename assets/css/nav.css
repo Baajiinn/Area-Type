@@ -5,6 +5,7 @@
     font-family: "Nunito", sans-serif;
     user-select: none;
     font-weight: 600;
+    
 }
 body{
     background: #141116;
@@ -35,10 +36,10 @@ a:not(:hover){
     transition: 0.3s;
 }
 nav{
+    position: fixed;
     z-index: 3;
     list-style: none;
     background-color: #141116;
-    position: fixed;
     line-height: 1.5rem;
     font-weight: 600;
     font-size: 1.3rem;
@@ -68,10 +69,11 @@ nav a{
 .nav_c{
     justify-items: center;
     align-items: center;
-    gap: 60px;
+    gap: 80px;
     display: flex;
-    
-    
+}
+.nav_c{
+    text-align: center;
 }
 .nav_r{
     align-items: center;

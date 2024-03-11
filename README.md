@@ -1,15 +1,19 @@
 # Area-Type
 
-Day 7 Working:
+Day 7 Done:
 
-    - Linked pages 💭
+    - Linked pages ✅
     
-    - Exercice responsive 💭
+    - Exercice responsive ❌
 
-    - Exercice sysyem adapted 💭
+    - Exercice sysyem adapted ✅
 
-    - Shop 💭
+    - Shop Deleted ❗
 
 Day 8 Incomming:
 
+    - Exercice responsive 💭
+
     - Account system 💭
+
+    

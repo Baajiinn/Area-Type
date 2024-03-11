@@ -12,7 +12,14 @@
     <?php include '../assets/php/nav2.php' ?>
     <section class="exercice">
         <div id="header">
-            <div id="info">30</div>
+            <div class="time-b" id="time-b">
+                <button id="timeFixed30">30</button>
+                <button class="push" id="timeFixed60">60</button>
+                <button class="push" id="timeFixed120">120</button>
+                <button class="push" id="timeFixed"></button>
+            </div>
+
+            <div id="info"></div>
         </div>
 
         <div class="container" id="game" tabindex="0">
@@ -23,8 +30,7 @@
 
         <div id="footer">
             <div id="buttons">
-                <button><img src="../assets/svg/restart.png" alt=""></button>
-                <button><img src="../assets/svg/next.png" alt=""></button>
+                <button id="refresh"><img src="../assets/svg/restart.png" alt=""></button>
             </div>
         </div>
     </section>
