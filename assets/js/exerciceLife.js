@@ -30,6 +30,10 @@ function formatWord(word) {
     .split("")
     .join("</span><span class='letter'>")}</span></div>`;
 }
+function getLifeNumber(){
+  life = document.getElementById("lifeNumber")
+  return life 
+}
 
 function newGame() {
   document.getElementById("words").innerHTML = "";

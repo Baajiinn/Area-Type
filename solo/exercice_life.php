@@ -16,7 +16,7 @@
                 <label id="life_option">
                 <img src="../assets/img/heart.png" alt="">
                 <input type="number" id="lifeNumber" value="">
-                <button onclick="getLifeNumber()">Get lives</button>
+                <button id="game_starter" onclick="getLifeNumber()">Get lives</button>
                 </label>
             </div>
         </div>
