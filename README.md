@@ -15,5 +15,3 @@ Day 8 Incomming:
     - Exercice responsive 💭
 
     - Account system 💭
-
-    

@@ -12,9 +12,12 @@
     <?php include '../assets/php/nav2.php' ?>
     <section class="exercice">
         <div id="header">
-            <div id="info"><img src="../assets/img/heart.png" alt="">
+            <div id="info">
+                <label id="life_option">
+                <img src="../assets/img/heart.png" alt="">
                 <input type="number" id="lifeNumber" value="">
                 <button onclick="getLifeNumber()">Get lives</button>
+                </label>
             </div>
         </div>
 
