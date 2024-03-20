@@ -14,14 +14,15 @@
         <div id="header">
             <div id="info">
                 <label id="life_option">
-                <img src="../assets/img/heart.png" alt="">
-                <input type="number" id="lifeNumber" value="">
-                <button id="game_starter" onclick="getLifeNumber()">Get lives</button>
+                    <img src="../assets/img/heart.png" alt="">
+                    <input type="number" id="lifeNumber" value="">
+                    <button id="game_starter" onclick="gameStarter()">Get lives</button>
                 </label>
             </div>
         </div>
 
         <div class="container" id="game" tabindex="0">
+            <img src="../assets/img/heart.png" alt="" class="heart">
             <div id="words"></div>
             <div id="cursor" style="transition: 0.2s ease;"></div>
             <div id="focus-error">Click here to focus</div>

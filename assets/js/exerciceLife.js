@@ -2,16 +2,8 @@ const words =
   "in one good real one not school set they state high life consider on and not come what also for set point can want as while with of order child about school thing never hold find order each too between program work end you home place around while place problem end begin interest while public or where see time those increase interest be give end think seem small as both another a child same eye you between way do who into again good fact than under very head become real possible some write know however late each that with because that place nation only for each change form consider we would interest with world so order or run more open that large write turn never over open each over change still old take hold need give by consider line only leave while what set up number part form want against great problem can because head so first this here would course become help year first end want both fact public long word down also long for without new turn against the because write seem line interest call not if line thing what work people way may old consider leave hold want life between most place may if go who need fact such".split(
     " "
   );
-let lives = 3;
 const wordsCount = words.length;
-/* infiny */
-window.gameStart = null;
-
-
-function updateLives() {
-  document.getElementById("lifeNumber").value = lives;
-}
-
+let life = 0;
 function addClass(el, name) {
   el.className += " " + name;
 }
@@ -30,65 +22,36 @@ function formatWord(word) {
     .split("")
     .join("</span><span class='letter'>")}</span></div>`;
 }
-function getLifeNumber(){
-  life = document.getElementById("lifeNumber")
-  return life 
+function gameStarter() {
+  let life = document.getElementById("lifeNumber").value;
+  document.getElementById("life_option").style.display = "none";
+  newGame(life);
 }
 
-function newGame() {
+function updateLife() {
+  life -= 1;
+  console.log(life);
+  if (life <= 0) {
+    gameOver();
+  }
+}
+
+function newGame(life) {
   document.getElementById("words").innerHTML = "";
   for (i = 0; i < 200; i++) {
     document.getElementById("words").innerHTML += formatWord(randomWord());
   }
   addClass(document.querySelector(".word"), "current");
   addClass(document.querySelector(".letter"), "current");
-  document.getElementById("info").innerHTML = gameTime / 1000 + "";
-  window.timer = null;
   document.getElementById("cursor").style.display = "block"; // Make the cursor appear
-}
-
-function updateTimer() {
-  const currentTime = new Date().getTime();
-  const msPassed = currentTime - window.gameStart;
-  const sPassed = Math.round(msPassed / 1000);
-  const sLeft = gameTime / 1000 - sPassed;
-
-  if (sLeft <= 0) {
+  if (life <= 0) {
     gameOver();
-    return;
   }
-
-  document.getElementById("info").innerHTML = sLeft + "";
-  requestAnimationFrame(updateTimer);
 }
 
 function gameOver() {
-  clearInterval(window.timer);
   addClass(document.getElementById("game"), "over");
-  const result = getWpm();
-  document.getElementById("info").innerHTML = `WPM : ${getWpm()}`;
   document.getElementById("cursor").style.display = "none";
-  window.timer = null; // Stop the timer
-}
-
-function getWpm() {
-  const words = [...document.querySelectorAll(".word")];
-  const lastTypedWord = document.querySelector(".word.current");
-  const lastTypedWordIndex = words.indexOf(lastTypedWord);
-  const typedWords = words.slice(0, lastTypedWordIndex);
-  const correctWords = typedWords.filter((word) => {
-    const letter = [...word.children];
-    const incorrectLetters = letter.filter((letter) =>
-      letter.className.includes("incorrect")
-    );
-    const correctLetters = letter.filter((letter) =>
-      letter.className.includes("correct")
-    );
-    return (
-      incorrectLetters.length === 0 && correctLetters.length === letter.length
-    );
-  });
-  return (correctWords.length / gameTime) * 60000;
 }
 
 // Refresh button
@@ -106,14 +69,6 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
   const isBackspace = key === "Backspace";
   const isFirstLetter = currentLetter === currentWord.firstChild;
 
-  if (isLetter && key !== expected) {
-    lives--;
-    updateLives();
-    if (lives <= 0) {
-      gameOver();
-    }
-  }
-
   if (document.querySelector("#game.over")) {
     return;
   }
@@ -122,7 +77,6 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
     window.timer = true;
     window.gameStart = new Date().getTime();
     document.getElementById("cursor").style.display = "block";
-    updateTimer();
   }
 
   if (isLetter) {
@@ -137,6 +91,7 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
       incorrectLetter.innerHTML = key;
       incorrectLetter.className = "letter incorrect extra";
       currentWord.appendChild(incorrectLetter);
+      updateLife();
     }
   }
 
@@ -213,4 +168,3 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
       nextLetter ? "left" : "right"
     ] + "px";
 });
-newGame();
