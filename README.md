@@ -1,17 +1,17 @@
 # Area-Type
 
-Day 7 Done:
+Day 8 Done:
 
-    - Linked pages ✅
+    - Life System almost done ⚠️
     
     - Exercice responsive ❌
 
-    - Exercice sysyem adapted ✅
 
-    - Shop Deleted ❗
-
-Day 8 Incomming:
+Day 9 Incomming:
 
     - Exercice responsive 💭
+
+
+Day 10 Incomming:
 
     - Account system 💭
