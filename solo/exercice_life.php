@@ -13,11 +13,15 @@
     <section class="exercice">
         <div id="header">
             <div id="info">
-                <label id="life_option">
-                    <img src="../assets/img/heart.png" alt="">
-                    <input type="number" id="lifeNumber" value="">
+                <div id="life_option">
+                <label id="life_option-items">
+                <img src="../assets/img/heart.png" class="heart" alt="">
+                    <p>Chose the amount of life you want to get !</p>
+                    <input type="number" id="lifeNumber" value="1" max="15">
                     <button id="game_starter" onclick="gameStarter()">Get lives</button>
                 </label>
+                </div>
+               
             </div>
         </div>
 
@@ -37,5 +41,14 @@
 
     <script src="../assets/js/exerciceLife.js"></script>
 </body>
-
+<script>
+    document.getElementById('lifeNumber').addEventListener('input', function (e) {
+        if (this.value > 15) {
+            this.value = 15;
+        }
+        else if (this.value <= 0) {
+            this.value = null;
+        }
+    });
+</script>
 </html>
