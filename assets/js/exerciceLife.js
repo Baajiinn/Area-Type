@@ -3,7 +3,7 @@ const words =
     " "
   );
 const wordsCount = words.length;
-let life = 0;
+let life = document.getElementById("lifeNumber").value;
 function addClass(el, name) {
   el.className += " " + name;
 }
@@ -37,6 +37,7 @@ function updateLife() {
 }
 
 function newGame(life) {
+  console.log(life);
   document.getElementById("words").innerHTML = "";
   for (i = 0; i < 200; i++) {
     document.getElementById("words").innerHTML += formatWord(randomWord());
@@ -73,9 +74,7 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
     return;
   }
 
-  if (!window.timer && isLetter) {
-    window.timer = true;
-    window.gameStart = new Date().getTime();
+  if (isLetter) {
     document.getElementById("cursor").style.display = "block";
   }
 
@@ -91,7 +90,6 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
       incorrectLetter.innerHTML = key;
       incorrectLetter.className = "letter incorrect extra";
       currentWord.appendChild(incorrectLetter);
-      updateLife();
     }
   }
 
@@ -144,6 +142,7 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
       addClass(currentWord.lastChild, "current");
       removeClass(currentWord.lastChild, "incorrect");
       removeClass(currentWord.lastChild, "correct");
+
     }
   }
 

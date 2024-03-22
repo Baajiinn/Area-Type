@@ -23,7 +23,7 @@
                 class="menu-hamburger-cross"></button>
     </div>
     <ul class="nav_r">
-
+<!--
         <li>
             <select class=" country" id="slick" name="">
                 <option class="country-items" value="Fr" data-imagesrc="../assets/svg/Fr.png"></option>
@@ -34,6 +34,8 @@
                 <option class="country-items" value="It" data-imagesrc="../assets/svg/It.png"></option>
             </select>
         </li>
+-->
+
         <li><a href="../../login.php">Login</a></li>
     </ul>
 </nav>
