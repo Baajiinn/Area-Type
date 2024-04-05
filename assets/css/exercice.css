@@ -124,8 +124,6 @@ div#game:focus{
     height: 2.4rem;
     background-color: #E34C26;
     position: fixed;
-    top: 400px;
-    left: 370px;
     margin-top: -5px;
 }
 #game:focus #cursor{
@@ -237,8 +235,6 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0;
 }
-
-
 #game_starter{
     border-radius: 10px;
     width: 100%;
@@ -253,5 +249,22 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #ffffff;
     color: #E34C26;
     transition: 0.3s;
+}
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-10px); }
+    40% { transform: translateX(10px); }
+    60% { transform: translateX(-10px); }
+    80% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+  }
+#life_0{
+    color: var(--textFault);
+    display: none;
+    text-align: center;
+    margin: 0;
+    font-size: 1.2rem;
+    animation: shake 0.35s;
+
 }
 /* @media only screen and (max-width: 1050px): */

@@ -26,6 +26,7 @@ function gameStarter() {
   let life = document.getElementById("lifeNumber").value;
   if (life <= 0){
     document.getElementById("life_option").style.visibility = "visible";
+    document.getElementById("life_0").style.display ="block";
     gameStarter()
   } else{
     document.getElementById("life_option").style.display = "none";
@@ -49,7 +50,7 @@ function newGame(life) {
   }
   addClass(document.querySelector(".word"), "current");
   addClass(document.querySelector(".letter"), "current");
-  document.getElementById("cursor").style.display = "block"; // Make the cursor appear
+  document.getElementById("cursor").style.display = "none"; // Make the cursor appear
   if (life <= 0) {
     gameOver();
   }
@@ -82,6 +83,8 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
   if (isLetter) {
     document.getElementById("cursor").style.display = "block";
   }
+  
+  
 
   if (isLetter) {
     if (currentLetter) {
@@ -125,7 +128,10 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
       (nextLetter || nextWord || isSpace || isBackspace).getBoundingClientRect()
         .left + "px";
   }
-
+  // LIFE CHANGER BY FAULT input
+  if (currentLetter && (currentLetter.className.includes("incorrect") || currentLetter.className.includes("extra"))) {
+    updateLife();
+  }
   if (isBackspace) {
     if (currentLetter && isFirstLetter && currentWord.previousSibling) {
       // make previous word current, last letter current
