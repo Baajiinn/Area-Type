@@ -24,8 +24,13 @@ function formatWord(word) {
 }
 function gameStarter() {
   let life = document.getElementById("lifeNumber").value;
-  document.getElementById("life_option").style.display = "none";
-  newGame(life);
+  if (life <= 0){
+    document.getElementById("life_option").style.visibility = "visible";
+    gameStarter()
+  } else{
+    document.getElementById("life_option").style.display = "none";
+    newGame(life);
+  }
 }
 
 function updateLife() {
