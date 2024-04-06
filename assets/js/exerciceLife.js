@@ -35,7 +35,9 @@ function gameStarter() {
 }
 
 function updateLife() {
-  life -= 1;
+  x = life;
+  x = x - 1;
+  life = x;
   console.log(life);
   if (life <= 0) {
     gameOver();
@@ -88,16 +90,21 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
 
   if (isLetter) {
     if (currentLetter) {
-      addClass(currentLetter, key === expected ? "correct" : "incorrect");
+      const isCorrect = key === expected;
+      addClass(currentLetter, isCorrect ? "correct" : "incorrect");
       removeClass(currentLetter, "current");
       if (currentLetter.nextSibling) {
         addClass(currentLetter.nextSibling, "current");
+      }
+      if (!isCorrect && !currentLetter.className.includes("incorrect")) {
+        updateLife();
       }
     } else {
       const incorrectLetter = document.createElement("span");
       incorrectLetter.innerHTML = key;
       incorrectLetter.className = "letter incorrect extra";
       currentWord.appendChild(incorrectLetter);
+      updateLife();
     }
   }
 
