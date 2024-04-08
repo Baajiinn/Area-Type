@@ -8,12 +8,12 @@
 </head>
 
 <nav>
-    <a href="../../index.php" class="nav_l">Area Type</a>
+    <a href="../index.php" class="nav_l">Area Type</a>
 
     <ul class="nav_c hidden" id="navlinks">
-        <li><a href="../../select_solo.php">Solo</a></li>
-        <li><a href="../../select_multi.php">Multiplayer</a></li>
-        <li><a href="../../loadboard.php">Leaderboard</a></li>
+        <li><a href="../select_solo.php">Solo</a></li>
+        <li><a href="../select_multi.php">Multiplayer</a></li>
+        <li><a href="../loadboard.php">Leaderboard</a></li>
     </ul>
 
     <div class="burger">
@@ -36,7 +36,7 @@
         </li>
 -->
 
-        <li><a href="../../login.php">Login</a></li>
+        <li><a href="../login.php">Login</a></li>
     </ul>
 </nav>
 

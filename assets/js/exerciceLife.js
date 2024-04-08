@@ -24,7 +24,8 @@ function formatWord(word) {
 }
 console.log(formatWord("hello"));
 function gameStarter() {
-  let life = document.getElementById("lifeNumber").value;
+  life = document.getElementById("lifeNumber").value;
+  updateLife();
   if (life <= 0){
     document.getElementById("life_option").style.visibility = "visible";
     document.getElementById("life_0").style.display ="block";
@@ -35,11 +36,19 @@ function gameStarter() {
   }
 }
 
+function incrementLife() {
+  life--;
+  updateLife();
+}
+
+function decrementLife() {
+  life--;
+  updateLife();
+}
+
 function updateLife() {
-  x = life;
-  x = x - 1;
-  life = x;
   console.log(life);
+  document.getElementById("life_changer").innerHTML = life;
   if (life <= 0) {
     gameOver();
   }
@@ -86,11 +95,6 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
 
   if (isLetter) {
     document.getElementById("cursor").style.display = "block";
-  }
-  
-  
-
-  if (isLetter) {
 
     if (currentLetter) {
       const isCorrect = key === expected;
@@ -102,19 +106,19 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
       if (currentLetter.nextSibling) {
         addClass(currentLetter.nextSibling, "current");
       }
-      if (!isCorrect && !currentLetter.className.includes("incorrect")) {
-        updateLife();
+      if (!isCorrect) {
+        decrementLife();
       }
     } else {
       const incorrectLetter = document.createElement("span");
       incorrectLetter.innerHTML = key;
       incorrectLetter.className = "letter incorrect extra";
       currentWord.appendChild(incorrectLetter);
-      updateLife();
+      decrementLife();
     }
   }
 
-  if (isSpace) {
+  else if (isSpace) {
     if (expected !== " ") {
       const letterToInvalidate = [
         ...document.querySelectorAll(".word.current .letter:not(.correct)"),
@@ -143,7 +147,7 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
   }
   // LIFE CHANGER BY FAULT input
 
-  if (isBackspace) {
+  else if (isBackspace) {
     if (currentLetter && isFirstLetter && currentWord.previousSibling) {
       // make previous word current, last letter current
       removeClass(currentWord, "current");
@@ -153,23 +157,28 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
       removeClass(currentWord.previousSibling.lastChild, "incorrect");
       removeClass(currentWord.previousSibling.lastChild, "correct");
     }
-    if (currentLetter && !isFirstLetter) {
+    else if (currentLetter && !isFirstLetter) {
       // move back one letter, invalidate letter
       removeClass(currentLetter, "current");
       addClass(currentLetter.previousSibling, "current");
       removeClass(currentLetter.previousSibling, "incorrect");
       removeClass(currentLetter.previousSibling, "correct");
     }
-    if (!currentLetter) {
-      addClass(currentWord.lastChild, "current");
-      removeClass(currentWord.lastChild, "incorrect");
-      removeClass(currentWord.lastChild, "correct");
+    else if (!currentLetter) {
+      if (!currentWord.lastChild.classList.contains("extra")) {
+        addClass(currentWord.lastChild, "current");
+        removeClass(currentWord.lastChild, "incorrect");
+        removeClass(currentWord.lastChild, "correct");
+      }
+      else{
+        currentWord.lastChild.remove();        
+      }
 
     }
   }
 
-  // move lines / words
-  if (currentLetter.getBoundingClientRect().top > 440) {
+  else if (currentLetter.getBoundingClientRect().top > 440) {
+    // move lines / words
     const words = document.getElementById("words");
     const margin = parseInt(words.style.marginTop || "0px");
     words.style.marginTop = margin - 35 + "px";

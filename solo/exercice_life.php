@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="life_counter">
-            <p class="life_changer"></p>
+            <p class="life_changer" id="life_changer"></p>
             <img src="../assets/img/heart.png" alt="heart" style="width:50px" class="heart">
         </div>
         <div class="container" id="game" tabindex="0">
