@@ -22,6 +22,7 @@ function formatWord(word) {
     .split("")
     .join("</span><span class='letter'>")}</span></div>`;
 }
+console.log(formatWord("hello"));
 function gameStarter() {
   let life = document.getElementById("lifeNumber").value;
   if (life <= 0){
@@ -73,6 +74,7 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
   const currentWord = document.querySelector(".word.current");
   const currentLetter = document.querySelector(".letter.current");
   const expected = currentLetter?.innerHTML || " ";
+  console.log("expected = " + expected);
   const isLetter = key.length === 1 && key !== " ";
   const isSpace = key === " ";
   const isBackspace = key === "Backspace";
@@ -89,9 +91,13 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
   
 
   if (isLetter) {
+
     if (currentLetter) {
       const isCorrect = key === expected;
+      console.log("currentLetter = " + currentLetter);
+      console.log(isCorrect);
       addClass(currentLetter, isCorrect ? "correct" : "incorrect");
+      console.log(currentLetter);
       removeClass(currentLetter, "current");
       if (currentLetter.nextSibling) {
         addClass(currentLetter.nextSibling, "current");
@@ -136,9 +142,7 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
         .left + "px";
   }
   // LIFE CHANGER BY FAULT input
-  if (currentLetter && (currentLetter.className.includes("incorrect") || currentLetter.className.includes("extra"))) {
-    updateLife();
-  }
+
   if (isBackspace) {
     if (currentLetter && isFirstLetter && currentWord.previousSibling) {
       // make previous word current, last letter current
