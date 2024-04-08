@@ -18,7 +18,7 @@
 
 <body>
     <?php 
-    include './assets/php/nav.php';
+    include 'assets/php/nav.php';
     ?>
 </body>
 

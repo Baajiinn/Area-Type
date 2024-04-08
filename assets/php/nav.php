@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="./assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
     <!-- Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,16 +11,16 @@
         <a href="index.php" class="nav_l">Area Type</a>
 
         <ul class="nav_c hidden" id="navlinks">
-            <li><a href="../../select_solo.php">Solo</a></li>
-            <li><a href="../../select_multi.php">Multiplayer</a></li>
-            <li><a href="../../loadboard.php">Leaderboard</a></li>
+            <li><a href="select_solo.php">Solo</a></li>
+            <li><a href="select_multi.php">Multiplayer</a></li>
+            <li><a href="loadboard.php">Leaderboard</a></li>
 
         </ul>
 
         <div class="burger">
-            <button onclick="openMenu()"><img src="../assets/svg/menu.png" alt="menu hamburger"
+            <button onclick="openMenu()"><img src="assets/svg/menu.png" alt="menu hamburger"
                     class="menu-hamburger"></button>
-            <button onclick="closeMenu()" class="cross"><img src="../assets/svg/cross.png" alt=""
+            <button onclick="closeMenu()" class="cross"><img src="assets/svg/cross.png" alt=""
                     class="menu-hamburger-cross"></button>
         </div>
         <ul class="nav_r"">

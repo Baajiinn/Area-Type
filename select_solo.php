@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solo - Unrated Gamemods</title>
-    <link rel="stylesheet" href="/assets/css/gamemods.css">
+    <link rel="stylesheet" href="assets/css/gamemods.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
