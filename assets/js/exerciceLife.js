@@ -22,15 +22,14 @@ function formatWord(word) {
     .split("")
     .join("</span><span class='letter'>")}</span></div>`;
 }
-console.log(formatWord("hello"));
 function gameStarter() {
   life = document.getElementById("lifeNumber").value;
-  updateLife();
-  if (life <= 0){
+  if (life <= 0 || life == null){
     document.getElementById("life_option").style.visibility = "visible";
     document.getElementById("life_0").style.display ="block";
     gameStarter()
   } else{
+    updateLife();
     document.getElementById("life_option").style.display = "none";
     newGame(life);
   }
@@ -95,7 +94,6 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
 
   if (isLetter) {
     document.getElementById("cursor").style.display = "block";
-
     if (currentLetter) {
       const isCorrect = key === expected;
       console.log("currentLetter = " + currentLetter);
@@ -126,6 +124,7 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
       letterToInvalidate.forEach((letter) => {
         addClass(letter, "incorrect");
       });
+      decrementLife();
     }
     removeClass(currentWord, "current");
     addClass(currentWord.nextSibling, "current");
@@ -145,7 +144,6 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
       (nextLetter || nextWord || isSpace || isBackspace).getBoundingClientRect()
         .left + "px";
   }
-  // LIFE CHANGER BY FAULT input
 
   else if (isBackspace) {
     if (currentLetter && isFirstLetter && currentWord.previousSibling) {

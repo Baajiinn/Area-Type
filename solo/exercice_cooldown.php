@@ -14,13 +14,14 @@
         <div id="header">
             <div class="time-b" id="time-b">
                 <button id="timeFixed30">30</button>
-                <button class="push" id="timeFixed60">60</button>
-                <button class="push" id="timeFixed120">120</button>
-                <button class="push" id="timeFixed"></button>
+                <button class=" push" id="timeFixed60" onclick="selectButton(this)">60</button>
+                <button class="push" id="timeFixed120" onclick="selectButton(this)">120</button>
+                <button class="push" id="timeFixed" onclick="selectButton(this)"></button>
             </div>
 
             <div id="info"></div>
         </div>
+
 
         <div class="container" id="game" tabindex="0">
             <div id="words"></div>

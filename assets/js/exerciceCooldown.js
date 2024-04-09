@@ -119,20 +119,23 @@ function getWpm() {
 // HIDING TIMER
 // Hide the timer when a button is clicked
 document.getElementById("timeFixed30").addEventListener("click", () => {
-  document.getElementById("info").style.display = "none";
+  //document.getElementById("time-b").style.display = "none";
   updateGameTime(30);
 });
 
 document.getElementById("timeFixed60").addEventListener("click", () => {
-  document.getElementById("info").style.display = "none";
+
+  //document.getElementById("time-b").style.display = "none";
   updateGameTime(60);
 });
 
 document.getElementById("timeFixed120").addEventListener("click", () => {
-  document.getElementById("info").style.display = "none";
+
+  //document.getElementById("time-b").style.display = "none";
   updateGameTime(120);
 });
 
+/*
 document.getElementById("timeFixed").addEventListener("click", () => {
   document.getElementById("info").style.display = "none";
   const customTime = document.getElementById("timeChoice").value;
@@ -140,16 +143,17 @@ document.getElementById("timeFixed").addEventListener("click", () => {
     updateGameTime(customTime);
   }
 });
+*/
 
 // Show the timer when the user starts typing
 document.getElementById("game").addEventListener("keyup", (ev) => {
   const tab_b = document.getElementById("time-b");
-  document.getElementById("info").style.display = ""; // Reset the display property
+  document.getElementById("info").style.display = "block"; // Reset the display property
   tab_b.style.position = "relative";
   tab_b.style.transition = "0.3s";
-  tab_b.style.transform = "translateY(1px)";
   // Rest of your keyup event handler...
 });
+
 
 // Refresh button
 document.getElementById("refresh").addEventListener("click", () => {
@@ -174,10 +178,12 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
     window.timer = true;
     window.gameStart = new Date().getTime();
     document.getElementById("cursor").style.display = "block";
+    document.getElementById("time-b").style.display = "none";
     updateTimer();
   }
 
   if (isLetter) {
+    document.getElementById("cursor").style.display = "block";
     if (currentLetter) {
       addClass(currentLetter, key === expected ? "correct" : "incorrect");
       removeClass(currentLetter, "current");
@@ -192,7 +198,7 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
     }
   }
 
-  if (isSpace) {
+  else if (isSpace) {
     if (expected !== " ") {
       const letterToInvalidate = [
         ...document.querySelectorAll(".word.current .letter:not(.correct)"),
@@ -220,7 +226,7 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
         .left + "px";
   }
 
-  if (isBackspace) {
+  else if (isBackspace) {
     if (currentLetter && isFirstLetter && currentWord.previousSibling) {
       // make previous word current, last letter current
       removeClass(currentWord, "current");
@@ -230,22 +236,28 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
       removeClass(currentWord.previousSibling.lastChild, "incorrect");
       removeClass(currentWord.previousSibling.lastChild, "correct");
     }
-    if (currentLetter && !isFirstLetter) {
+    else if (currentLetter && !isFirstLetter) {
       // move back one letter, invalidate letter
       removeClass(currentLetter, "current");
       addClass(currentLetter.previousSibling, "current");
       removeClass(currentLetter.previousSibling, "incorrect");
       removeClass(currentLetter.previousSibling, "correct");
     }
-    if (!currentLetter) {
-      addClass(currentWord.lastChild, "current");
-      removeClass(currentWord.lastChild, "incorrect");
-      removeClass(currentWord.lastChild, "correct");
+    else if (!currentLetter) {
+      if (!currentWord.lastChild.classList.contains("extra")) {
+        addClass(currentWord.lastChild, "current");
+        removeClass(currentWord.lastChild, "incorrect");
+        removeClass(currentWord.lastChild, "correct");
+      }
+      else{
+        currentWord.lastChild.remove();        
+      }
+
     }
   }
 
   // move lines / words
-  if (currentLetter.getBoundingClientRect().top > 440) {
+  else if (currentLetter.getBoundingClientRect().top > 440) {
     const words = document.getElementById("words");
     const margin = parseInt(words.style.marginTop || "0px");
     words.style.marginTop = margin - 35 + "px";
